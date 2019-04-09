@@ -10,11 +10,11 @@ import (
 func main() {
 	resp, err := http.Get("https://mvideo.ru")
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 	bytes, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 	stringBody := string(bytes)
 	mass := strings.Fields(stringBody)
